@@ -4,7 +4,7 @@
 
 > For technical details, please refer to:
 >
-> [xxx](xxx)
+> [Conservative-Progressive Collaborative Learning for Semi-supervised Semantic Segmentation](https://arxiv.org/pdf/2211.16701.pdf)
 
 ## (0) Abstract
 
@@ -159,7 +159,12 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
 If you find our work useful in your research, please consider citing:
 
 ```
-xxxxxx
+@article{fan2022conservative,
+  title={Conservative-Progressive Collaborative Learning for Semi-supervised Semantic Segmentation},
+  author={Fan, Siqi and Zhu, Fenghua and Feng, Zunlei and Lv, Yisheng and Song, Mingli and Wang, Fei-Yue},
+  journal={arXiv preprint arXiv:2211.16701},
+  year={2022}
+}
 ```
 
 
