@@ -4,7 +4,7 @@
 
 > For technical details, please refer to:
 >
-> [Conservative-Progressive Collaborative Learning for Semi-supervised Semantic Segmentation](https://arxiv.org/pdf/2211.16701.pdf)
+> [Conservative-Progressive Collaborative Learning for Semi-supervised Semantic Segmentation](https://ieeexplore.ieee.org/document/10042237)
 
 ## (0) Abstract
 
@@ -36,11 +36,11 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
 
       | Dataset                  |                             | Baidu Cloud  | Google Drive |
       |--------------------------|-----------------------------|----------------|----------------|
-      | Cityscapes               | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1C1zk3PKGGBUhHLvxYQjp4g): upg7 | [xxx](xxx) |
-      | PascalVOC                | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1StgPaJpHVgwmP1iGvzkCFg): ee81 | [xxx](xxx) |
-      |                          | Semi-Supervision(ResNet101) |[Download](https://pan.baidu.com/s/1oXhsJRdk2XzzT2QKvk-gpw): xrpj | [xxx](xxx) |
-      |                          | Few-Supervision(ResNet50)   |[Download](https://pan.baidu.com/s/1kpdvFp0Az12zKG_ZFBwt-Q): 5ygh | [xxx](xxx) |
-      |                          | Full-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1oYzE9RSqgwuKno1vrFtA6g): dc2j | [xxx](xxx) |
+      | Cityscapes               | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1C1zk3PKGGBUhHLvxYQjp4g): upg7 | [TBD](xxx) |
+      | PascalVOC                | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1StgPaJpHVgwmP1iGvzkCFg): ee81 | [TBD](xxx) |
+      |                          | Semi-Supervision(ResNet101) |[Download](https://pan.baidu.com/s/1oXhsJRdk2XzzT2QKvk-gpw): xrpj | [TBD](xxx) |
+      |                          | Few-Supervision(ResNet50)   |[Download](https://pan.baidu.com/s/1kpdvFp0Az12zKG_ZFBwt-Q): 5ygh | [TBD](xxx) |
+      |                          | Full-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1oYzE9RSqgwuKno1vrFtA6g): dc2j | [TBD](xxx) |
 
   * Download the ResNet-50/ResNet-101 for training and move it to ./DATA/pytorch-weight/
 
@@ -53,7 +53,7 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
 
 * Data preparation
   
-  Download the "city.zip" at [xxx](xxx), and move the upcompressed folder to ./DATA/city
+  Download the "city.zip" followed [CPS](https://pkueducn-my.sharepoint.com/personal/pkucxk_pku_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpkucxk%5Fpku%5Fedu%5Fcn%2FDocuments%2FDATA&ga=1), and move the upcompressed folder to ./DATA/city
 
 * Modify the configuration in [config.py](./exp_city/config.py)
   * Setup the path to the CPCL in line 24
@@ -159,12 +159,19 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
 If you find our work useful in your research, please consider citing:
 
 ```
-@article{fan2022conservative,
-  title={Conservative-Progressive Collaborative Learning for Semi-supervised Semantic Segmentation},
+@ARTICLE{10042237,
   author={Fan, Siqi and Zhu, Fenghua and Feng, Zunlei and Lv, Yisheng and Song, Mingli and Wang, Fei-Yue},
-  journal={arXiv preprint arXiv:2211.16701},
-  year={2022}
-}
+  journal={IEEE Transactions on Image Processing}, 
+  title={Conservative-Progressive Collaborative Learning for Semi-supervised Semantic Segmentation}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TIP.2023.3242819}}
 ```
+
+### Acknowledgment
+
+Part of our code refers to the work [CPS](https://github.com/charlesCXK/TorchSemiSeg)
 
 
