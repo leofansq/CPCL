@@ -60,7 +60,7 @@ C.device = '0'
 C.seed = 12345
 
 C.labeled_ratio = 8     # ratio of labeled set
-C.nepochs = 137
+C.nepochs = 137 # nepochs
 
 # Dataset Config
 C.train_source = osp.join(C.dataset_path, "config_new/subset_train/train_aug_labeled_1-{}.txt".format(C.labeled_ratio))
@@ -97,7 +97,7 @@ else:
 if os.getenv('batch_size'):
     C.batch_size = int(os.environ['batch_size'])
 else:
-    C.batch_size = 3
+    C.batch_size = 16 # batch_size
 
 C.lr_power = 0.9
 C.momentum = 0.9

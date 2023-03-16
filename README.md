@@ -34,13 +34,13 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
 * Download pertained models
   * Download the pretrained models for evaluation
 
-      | Dataset                  |                             | Baidu Cloud  | Google Drive |
-      |--------------------------|-----------------------------|----------------|----------------|
-      | Cityscapes               | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1C1zk3PKGGBUhHLvxYQjp4g): upg7 | [TBD](xxx) |
-      | PascalVOC                | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1StgPaJpHVgwmP1iGvzkCFg): ee81 | [TBD](xxx) |
-      |                          | Semi-Supervision(ResNet101) |[Download](https://pan.baidu.com/s/1oXhsJRdk2XzzT2QKvk-gpw): xrpj | [TBD](xxx) |
-      |                          | Few-Supervision(ResNet50)   |[Download](https://pan.baidu.com/s/1kpdvFp0Az12zKG_ZFBwt-Q): 5ygh | [TBD](xxx) |
-      |                          | Full-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1oYzE9RSqgwuKno1vrFtA6g): dc2j | [TBD](xxx) |
+      | Dataset                  |                             | Baidu Cloud  |
+      |--------------------------|-----------------------------|----------------|
+      | Cityscapes               | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1C1zk3PKGGBUhHLvxYQjp4g): upg7 |
+      | PascalVOC                | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1StgPaJpHVgwmP1iGvzkCFg): ee81 |
+      |                          | Semi-Supervision(ResNet101) |[Download](https://pan.baidu.com/s/1oXhsJRdk2XzzT2QKvk-gpw): xrpj |
+      |                          | Few-Supervision(ResNet50)   |[Download](https://pan.baidu.com/s/1kpdvFp0Az12zKG_ZFBwt-Q): 5ygh |
+      |                          | Full-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1oYzE9RSqgwuKno1vrFtA6g): dc2j |
 
   * Download the ResNet-50/ResNet-101 for training and move it to ./DATA/pytorch-weight/
 
@@ -68,7 +68,7 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
     C.labeled_ratio = 8
     C.nepochs = 137
     ```
-    > The recommended nepochs corresponding to the labeled_ratio are listed as below
+    > The recommended nepochs for batch_size=16 corresponding to the labeled_ratio are listed as below
     > | Dataset    | 1/16 | 1/8  | 1/4  | 1/2  |
     > | ---------- | ---- | ---- | ---- | ---- |
     > | Cityscapes | 128  | 137  | 160  | 240  |
@@ -116,7 +116,7 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
     C.labeled_ratio = 8
     C.nepochs = 34
     ```
-    > The recommended nepochs corresponding to the labeled_ratio are listed as below
+    > The recommended nepochs for batch_size=8 corresponding to the labeled_ratio are listed as below
     > | Dataset    | 1/16 | 1/8  | 1/4  | 1/2  |
     > | ---------- | ---- | ---- | ---- | ---- |
     > | PascalVOC  | 32   | 34   | 40   | 60   |

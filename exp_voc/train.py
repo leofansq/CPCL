@@ -67,6 +67,7 @@ with Engine(custom_parser=parser) as engine:
 
     # Criterion
     criterion = nn.CrossEntropyLoss(reduction='mean', ignore_index=255)
+    criterion_unsup = nn.CrossEntropyLoss(reduction='none', ignore_index=255)
 
     # Model
     model = Network(config.num_classes, criterion=criterion, pretrained_model=config.pretrained_model, norm_layer=nn.BatchNorm2d)
@@ -177,12 +178,12 @@ with Engine(custom_parser=parser) as engine:
             _, ps_label_2 = torch.max(logits_cons_tea_2, dim=1)
             ps_label_2 = ps_label_2.long()
 
-            loss_w_1 = torch.max(F.softmax(logits_cons_tea_1, dim=-1))
-            loss_w_2 = torch.max(F.softmax(logits_cons_tea_2, dim=-1))
+            loss_w_1 = torch.max(F.softmax(logits_cons_tea_1, dim=1), dim=1)[0]
+            loss_w_2 = torch.max(F.softmax(logits_cons_tea_2, dim=1), dim=1)[0]
 
             confusion = confusion_matrix(np.concatenate([ps_label_1.view(-1).cpu().numpy(), np.array(label)]), np.concatenate([ps_label_2.view(-1).cpu().numpy(), np.array(label)]))
             w = (np.sum(confusion, axis=0)-np.diag(confusion))/np.sum(confusion, axis=0) + (np.sum(confusion, axis=1)-np.diag(confusion))/np.sum(confusion, axis=1)
-            w = torch.from_numpy(w/np.sum(w)).cuda(non_blocking=True)
+            w = torch.from_numpy(w/(np.sum(w)+1e-6)).cuda(non_blocking=True)
             overlap = np.sum(np.diag(confusion))/np.sum(confusion)
 
             ps_label_inter = torch.where(ps_label_1==ps_label_2, ps_label_1, torch.ones_like(ps_label_1)*255)
@@ -196,8 +197,8 @@ with Engine(custom_parser=parser) as engine:
             _, logits_cons_stu_2 = model(unsup_imgs_mixed, step=2)
 
             # Unsupervised Loss
-            loss_unsup_inter = torch.mean(criterion(logits_cons_stu_1, ps_label_inter) * (loss_w_1 + loss_w_2)/2)
-            loss_unsup_union =  torch.mean(criterion(logits_cons_stu_2, ps_label_union) * torch.where(ps_label_1==ps_label_2, (loss_w_1 + loss_w_2)/2, torch.where(w[ps_label_1]>w[ps_label_2], loss_w_1, loss_w_2)))
+            loss_unsup_inter = torch.mean(criterion_unsup(logits_cons_stu_1, ps_label_inter) * (loss_w_1 + loss_w_2)/2)
+            loss_unsup_union =  torch.mean(criterion_unsup(logits_cons_stu_2, ps_label_union) * torch.where(ps_label_1==ps_label_2, (loss_w_1 + loss_w_2)/2, torch.where(w[ps_label_1]>w[ps_label_2], loss_w_1, loss_w_2)))
             loss_unsup = (loss_unsup_inter + loss_unsup_union) * config.unsup_weight
 
 
