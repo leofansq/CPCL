@@ -34,13 +34,15 @@ This code has been tested with Python 3.6, PyTorch 1.0.0 on Ubuntu 18.04.
 * Download pertained models
   * Download the pretrained models for evaluation
 
-      | Dataset                  |                             | Baidu Cloud  |
-      |--------------------------|-----------------------------|----------------|
-      | Cityscapes               | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1C1zk3PKGGBUhHLvxYQjp4g): upg7 |
-      | PascalVOC                | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1StgPaJpHVgwmP1iGvzkCFg): ee81 |
-      |                          | Semi-Supervision(ResNet101) |[Download](https://pan.baidu.com/s/1oXhsJRdk2XzzT2QKvk-gpw): xrpj |
-      |                          | Few-Supervision(ResNet50)   |[Download](https://pan.baidu.com/s/1kpdvFp0Az12zKG_ZFBwt-Q): 5ygh |
-      |                          | Full-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1oYzE9RSqgwuKno1vrFtA6g): dc2j |
+      | Dataset                  | Setting                     | Baidu Cloud                                                      |  Google Drive                   |
+      |--------------------------|-----------------------------|------------------------------------------------------------------|---------------------------------|
+      | Cityscapes               | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1C1zk3PKGGBUhHLvxYQjp4g): upg7 | [Download](https://drive.google.com/file/d/1Cpm_sd_Eg4Y6EFs6R8ULbbWtj629JcD7/view?usp=sharing)
+      | PascalVOC                | Semi-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1StgPaJpHVgwmP1iGvzkCFg): ee81 | [Download](https://drive.google.com/file/d/13Rso-lCzku0Hcqf7swHR8nijYVSHe13y/view?usp=sharing)
+      |                          | Semi-Supervision(ResNet101) |[Download](https://pan.baidu.com/s/1oXhsJRdk2XzzT2QKvk-gpw): xrpj | [Download](https://drive.google.com/file/d/1xms4nLRkF_OQqLdFIjBs6uhaPdWN2nJ1/view?usp=sharing)
+      |                          | Few-Supervision(ResNet50)   |[Download](https://pan.baidu.com/s/1kpdvFp0Az12zKG_ZFBwt-Q): 5ygh | [Download](https://drive.google.com/file/d/1Vjfmd7GNZFpY8iuLRKHpXMRnJUPrcR5E/view?usp=sharing)
+      |                          | Full-Supervision(ResNet50)  |[Download](https://pan.baidu.com/s/1oYzE9RSqgwuKno1vrFtA6g): dc2j | [Download](https://drive.google.com/file/d/1xulOqS66sP1xpevxxtxxwRFVA9ia1aQ7/view?usp=sharing)
+    
+    > Notes: We only uploaded several representative pretrained models (data partition = 1/8) to GoogleDrive due to the space limitation. You can achieve the whole buckets of pretrained models from BaiduCloud.
 
   * Download the ResNet-50/ResNet-101 for training and move it to ./DATA/pytorch-weight/
 
